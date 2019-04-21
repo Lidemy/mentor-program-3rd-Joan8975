@@ -19,7 +19,8 @@
 
 ## Git 的基礎指令使用
 ### 1. git init
-了解 Git 的一些基本特性後，我們來熟悉 Git 的工作流程吧，首先要建立開發專案（包括建立工作區和版本庫），工作區就是你電腦裡的目錄，若你要把當前目錄做版本控制，就要使用 `git init` 指令建立一個這個專案的版本庫（Repository ）。關係如下圖：<br>
+了解 Git 的一些基本特性後，我們來熟悉 Git 的工作流程吧，首先要建立開發專案（包括建立工作區和版本庫），工作區就是你電腦裡的目錄，若你要把當前目錄做版本控制，就要使用 `git init` 指令建立一個這個專案的版本庫（Repository ）。關係如下圖：
+<br>
 ![](https://i.imgur.com/EW1ynYS.jpg)
 
 ### 2. git status
@@ -95,9 +96,9 @@ Changes to be committed:
 
 
 ## 參考資料
-[30 天精通 Git 版本控管](https://blog.miniasp.com/post/2013/11/03/Learning-Git-Part-2-Master-Git-in-30-days)
-[Git-Book](https://git-scm.com/book/en/v2)
-[廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000)
+[30 天精通 Git 版本控管](https://blog.miniasp.com/post/2013/11/03/Learning-Git-Part-2-Master-Git-in-30-days)<br>
+[Git-Book](https://git-scm.com/book/en/v2)<br>
+[廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000)<br>
 [為你自己學 Git ](https://gitbook.tw/)
 
 
