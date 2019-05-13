@@ -28,7 +28,7 @@ switch (process.argv[2]) {
       },
     },
     (error, response) => {
-      if (error === null && response.statusCode === 201) {
+      if (error === null && response.statusCode >= 200 && response.statusCode < 300) {
         console.log('資料成功新增');
       } else {
         console.log(`呼叫 API 時發生錯誤！狀態碼：${response.statusCode}, 錯誤訊息：${error}`);
@@ -38,7 +38,7 @@ switch (process.argv[2]) {
   case 'delete':
     request.delete(`https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
       (error, response) => {
-        if (error === null && response.statusCode === 200) {
+        if (error === null && response.statusCode >= 200 && response.statusCode < 300) {
           console.log('資料成功刪除');
         } else {
           console.log(`呼叫 API 時發生錯誤！狀態碼：${response.statusCode}, 錯誤訊息：${error}`);
@@ -53,7 +53,7 @@ switch (process.argv[2]) {
       },
     },
     (error, response) => {
-      if (error === null && response.statusCode === 200) {
+      if (error === null && response.statusCode >= 200 && response.statusCode < 300) {
         console.log('資料成功修改');
       } else {
         console.log(`呼叫 API 時發生錯誤！狀態碼：${response.statusCode}, 錯誤訊息：${error}`);

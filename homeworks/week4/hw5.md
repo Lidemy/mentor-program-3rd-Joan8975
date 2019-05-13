@@ -22,7 +22,7 @@ Base URL: https://shielded-ravine-56889.herokuapp.com/
 ### **回傳所有餐廳資料**
 Method：GET
 path：/restaurants
-參數：/restaurants_limit:限制回傳資料數量
+參數：_limit:限制回傳資料數量
 範例：https://shielded-ravine-56889.herokuapp.com/restaurants?limit=4
 Response:
 ```
