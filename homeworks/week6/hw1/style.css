@@ -1,0 +1,103 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+}
+.header{
+	background-color: #1f2835;
+}
+.header a{
+	font-size: 16px;
+	padding: 0px 8px;
+	color: #A3A5A7;
+	line-height: 54px;
+}
+p{
+	line-height: 22px;
+}
+h1{
+	display: inline;
+	font-size: 20px;
+	line-height: 54px;
+	color: #ffffff;
+	padding: 0px 12px;
+}
+.header nav{
+	display: inline-block;
+	font-size: 0px;
+}
+.header nav :hover{
+	color:#ffffff;
+	transition: all 0.3s ease 0s;
+}
+.main{
+	background-color: #e9faff;
+}
+.container{
+	width: 100%;
+	max-width: 960px;
+	margin: auto;
+}
+.main .content{
+	padding: 50px 20px;
+}
+.main h2{
+	font-size: 72px;
+}
+.main p{
+	margin: 24px 0px;
+}
+.button a{
+	border-radius: 5px;
+	color: #ffffff;
+	display:inline-block;
+}
+.main .button a{
+	padding: 15px 30px;
+	background-color: #1f7ef2;
+	font-size: 20px;
+}
+.main .button :hover{
+	background-color: #006ed5;
+	transition: all 0.6s ease 0s;
+}
+.item{
+	padding-right: 16px;
+	margin-bottom: 50px;
+}
+.item_group{
+	padding: 50px 20px;
+}
+
+.feature h3{
+	font-size: 36px;
+}
+.feature p{
+	padding: 16px 0px;
+}
+.feature .button a{
+	font-size: 16px;
+	padding: 12px 20px;
+	background-color: #939393;
+}
+.feature .button :hover{
+	background-color: #7a7a7a;
+	transition: all 0.6s ease 0s;
+}
+footer {
+	width: 100%;
+	max-width: 960px;
+	margin: auto;
+}
+footer p{
+	padding: 20px;
+	border-top: 1px solid #e3e3e3;
+}
+@media screen and (min-width: 768px){
+	.item_group{
+	display: flex;
+	}
+}
