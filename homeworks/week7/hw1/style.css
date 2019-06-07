@@ -1,0 +1,29 @@
+*{
+	/* outline: #fa0 solid 1px; */
+	margin: 0;
+	padding: 0;
+}
+.turn{
+	background-color: #9ad1c0;
+}
+.wrap{
+	height: 100vh;
+}
+h2{
+	color:#387763;
+	padding-top:300px;
+	text-align: center;
+}
+button{
+	border: 0px;
+	height: 60px;
+	width: 100px;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 5px;
+	background-color: #e5841d;
+	color:#ffffff;
+	text-align: center;
+	display:block;
+	margin: 20px auto;
+}

@@ -1,0 +1,124 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	/* outline: #fa0 1px solid; */
+}
+body{
+	background-color: #f2ebe6;
+}
+.banner {
+	padding: 200px;
+	background-image: url('./banner.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% auto;
+}
+.content{
+	border-top: 8px solid #d17d68;
+	padding:20px;
+	background-color: #ffffff;
+	max-width: 540px;
+	position: absolute;
+	top: 100px;
+	left: 0;
+	right: 0;
+	margin: 50px auto;
+}
+.content p{
+	padding: 20px 20px;
+	margin:10px 0px;
+}
+
+h2{
+	font-size: 34px;
+	line-height: 50px;
+	margin: 0px 20px;
+}
+.descript{
+	font-size: 13px;
+	line-height: 20px;
+}
+.descript span{
+	display:block;
+	padding-top: 10px;
+	color:#EA3436;
+}
+h2{
+	padding: 10px 0;
+}
+input{
+	/* background-color: #2196F3; */
+	padding: 10px 0px;
+	margin: 10px 0px;
+	display:block;
+	border:none;
+	border-bottom:1px solid #ccc;
+	width:60%;
+	background-color: transparent;
+}
+button{
+	color:#ffffff;
+	background-color: #125DED;
+	padding: 10px 30px;
+	border-radius: 5px;
+	border: none;
+}
+label{
+	display: block;
+	font-size: 19px;
+	padding-top:0px;
+	padding-bottom: 10px;
+}
+label.container{
+	padding: 10px 0;
+
+}
+.nickname span:last-child,.background span:last-child, .others span:last-child{
+	display:block;
+	font-size: 13px;
+	padding-top: 10px;
+	color:black;
+}
+label span{
+	color:#EA3436;
+}
+.err_bg{
+	background-color: #FFD6D6;
+}
+.require{
+	color:#EA3436;
+}
+.line{
+	border-bottom: 1px solid #EA3436;
+}
+.container input{
+	display: inline-block;
+	margin-right:10px;
+	width:auto;
+	opacity: 0;
+	cursor: pointer;
+}
+.container {
+	position: relative;
+	cursor: pointer;
+	font-size: 16px;
+}
+.checkmark {
+	position: absolute;
+	top: 18px;
+	left: 0;
+	height: 16px;
+	width: 16px;
+	background-color: #eee;
+	border-radius: 50%;
+}
+.container input:checked ~ .checkmark {
+	height: 4px;
+	width: 4px;
+	border: 6px solid #2196F3;
+	background-color: #ffffff;
+}
+button{
+	margin: 20px;
+}
