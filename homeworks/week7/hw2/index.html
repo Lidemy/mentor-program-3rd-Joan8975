@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Joan8975_hw2</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div class="banner"></div>
+	<form class="content">
+		<h2>從零到一：程式導師實驗計畫報名表單</h2>
+		<p class= descript>
+			詳情請參考：<a href="https://medium.com/@hulitw/mentor-program-b5f96ae1eed">https://medium.com/@hulitw/mentor-program-b5f96ae1eed</a><br>
+			記得填完表單之後還要寫信報名才算成功，兩者缺一不可！<br>
+			<span>*必填</span>
+		</p>
+		<p class="email wrapper">
+			<label>電子郵件地址<span> *</span></label>
+			<input type="email" name="email" class="required" placeholder="你的電子郵件" >
+		</p>
+		<p class="nickname wrapper" >
+			<label>
+				暱稱<span> *</span><span>該怎麼稱呼你</span>
+			</label>
+			<input type="text" name="nickname" class="required" placeholder="你的回答" >
+		</p>
+		<p class="program" >
+			<label>報名類型<span> *</span></label>
+			<label class="container">
+				<input type="radio" name="radio" value="工程師培養班（每週付出四十小時，從零培養到工程師，學費是一個月薪水)" >
+				工程師培養班（每週付出四十小時，從零培養到工程師，學費是一個月薪水） 
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">
+				<input type="radio" name="radio" value="業餘班（依照個人目標訂立學習計畫，學費一萬五千元)" >
+				業餘班（依照個人目標訂立學習計畫，學費一萬五千元） 
+			<span class="checkmark"></span>
+			</label>
+		</p>
+		<p class="background wrapper" >
+			<label>
+				是否有程式相關背景？<span> *</span><span>範例：無、高中時候學過C++、學過一點網頁前端、目前在資策會上課...</span>
+			</label>
+			<input type="text" name="background" placeholder="你的回答" class="required">
+		</p>
+		<p class="others">
+			<label>
+				其他<span>其他任何你想講的</span>
+			</label>
+			<input type="text" name="others" placeholder="你的回答" >
+		</p>
+		<button type="submit" class ="btn_submit">
+			<span>送出</span>
+		</button>
+	</form>
+	<script src="./main.js"></script>
+</body>
+</html>
