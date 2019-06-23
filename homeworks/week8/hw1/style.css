@@ -40,7 +40,7 @@ html, body {
 .second_bg, .third_bg{
 	background-color: #d6a598;
 }
-svg{
+embed{
 	width: 100px;
 	height: auto;
 	position: absolute;
