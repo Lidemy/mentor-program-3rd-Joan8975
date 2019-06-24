@@ -7,7 +7,7 @@
 		isset($_POST['password']) &&
 		!empty($_POST['username']) &&
 		!empty($_POST['password'])){
-			$sql = "SELECT * from `users` where `username` = '$username' and `password` = '$password'";
+			$sql = "SELECT * from `joan8975_users` where `username` = '$username' and `password` = '$password'";
 			$result = $conn->query($sql);
 			if(!$result) {
 				print_message('錯誤請重試', './login.php');

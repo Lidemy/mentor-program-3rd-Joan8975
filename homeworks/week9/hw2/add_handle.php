@@ -5,7 +5,7 @@
 	$cookie =  $_COOKIE['username'];
 	if (isset($_POST['content']) &&
 		!empty($_POST['content'])){
-			$sql = "INSERT INTO `message_board`(`username`, `content`) VALUES ('$cookie','$content')";
+			$sql = "INSERT INTO `joan8975_comments`(`username`, `content`) VALUES ('$cookie','$content')";
 			$result = $conn->query($sql);
 
 			if($result) {

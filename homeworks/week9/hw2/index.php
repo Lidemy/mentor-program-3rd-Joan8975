@@ -46,8 +46,8 @@
 		<div class="comment_group">
 			<?php
 				$sql = "SELECT m.content, m.created_at, u.nickname 
-				FROM `message_board` as m
-				LEFT JOIN `users` as u ON m.username = u.username ORDER BY m.created_at DESC";
+				FROM `joan8975_comments` as m
+				LEFT JOIN `joan8975_users` as u ON m.username = u.username ORDER BY m.created_at DESC";
 
 				$result = $conn->query($sql);
 
