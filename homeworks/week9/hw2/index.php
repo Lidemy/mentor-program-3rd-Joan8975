@@ -16,7 +16,7 @@
 		<p class="bar">本站為練習用網站，因教學用途刻意忽略資安的實作，註冊時請勿使用任何真實的帳號或密碼</p>
 		<div class="nav_right">
 			<?php
-				if ($checkLogin) {
+				if ($username) {
 					echo'<a href ="javascript:;">Hello, ' . $_COOKIE['username'] . '</a>';
 					echo '<a href="./logout.php">登出</a>';
 				} else {
@@ -34,7 +34,7 @@
 		<form class="mes_form" method="POST" action="./add_handle.php">
 			<img src="./user.png" class="preview_img">
 			<?php
-				if ($checkLogin) {
+				if ($username) {
 					echo '<textarea name="content" class="message_txt" placeholder="留言⋯⋯" style="resize:none;width:377px; height:150px"></textarea>';
 					echo '<button class="mes_send" type="submit">發佈</button>';
 				} else {
