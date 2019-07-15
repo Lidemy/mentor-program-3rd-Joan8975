@@ -12,10 +12,11 @@
 	if (isset($_POST['content']) &&
 		!empty($_POST['content'])){
 			$content = $_POST['content'];
-			$sql = "UPDATE `joan8975_comments`
-			SET `content` = '$content'
-			WHERE `id` =  $id ";
-			$result = $conn->query($sql);
+			$stmt = $conn->prepare("UPDATE `joan8975_comments`
+			SET `content` = ?
+			WHERE `id` =  ?");
+			$stmt->bind_param("ss", $content, $id);
+			$result = $stmt->execute();
 			if($result) {
 				?>
 				<script>

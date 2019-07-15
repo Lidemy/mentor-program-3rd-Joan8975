@@ -11,13 +11,11 @@
 		$page = intval($_GET['page']);
 	}
 
-
-
 	if (isset($_POST['content']) &&
 		!empty($_POST['content'])){
-			$sql = "INSERT INTO `joan8975_comments`(`username`, `content`, `parent_id`) VALUES ('$userName','$content',$parent_id)";
-			$result = $conn->query($sql);
-
+			$stmt = $conn->prepare("INSERT INTO `joan8975_comments`(`username`, `content`, `parent_id`) VALUES (?,?,?)");
+			$stmt->bind_param("sss", $userName, $content, $parent_id);
+			$result = $stmt->execute();
 			if($result) {
 				print_message('刪除成功', './index.php?page=' . $page);
 				header('Location: ./index.php?page='. $page . '#' . $parent_id);
@@ -26,6 +24,5 @@
 			}
 	} else {
 		print_message('請輸入內容！', './index.php');
-
 	}
 ?>

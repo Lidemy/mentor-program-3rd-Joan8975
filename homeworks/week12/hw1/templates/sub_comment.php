@@ -4,17 +4,19 @@
 <div class="sub_comments">
 <?php
 $id = $row['id'];
-$sql_sub = "SELECT m.content, m.created_at, m.username, m.id, u.nickname
+$stmt_sub = $conn->prepare("SELECT m.content, m.created_at, m.username, m.id, u.nickname
 FROM `joan8975_comments` as m
 LEFT JOIN `joan8975_users` as u 
 ON m.username = u.username  
-WHERE m.parent_id = $id
-ORDER BY m.created_at ASC";
-$result_sub = $conn->query($sql_sub);
+WHERE m.parent_id = ?
+ORDER BY m.created_at ASC");
+$stmt_sub->bind_param("s", $id);
+$stmt_sub->execute();
+$result_sub = $stmt_sub->get_result();
 
 if ($result_sub) {
 	while($row_sub = $result_sub->fetch_assoc()) {
-		if ($row_sub['username'] === $row['username']){
+		if ($row_sub['username'] === $row['username']){//留言是原 po ，背景色灰色。想請問這邊是不是能加入 JavaScript 來判斷要不要在 sub_comment_author 這個 class 改背景？自己試過但是可能因為 <script> 插入位置有誤所以一直失敗
 		?>
 		<div class="sub_comment_author">
 			<img src='./user.png' class='preview_img'>
@@ -34,7 +36,7 @@ if ($result_sub) {
 			?>
 		</div>
 		<?php
-		} else{
+		} else{//留言不是原 po ，背景色白色
 		?>
 		<div class="sub_comment">
 			<img src='./user.png' class='preview_img'>

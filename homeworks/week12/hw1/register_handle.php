@@ -1,7 +1,6 @@
 <?php
 	require_once('./conn.php');
 	require_once('./utils.php');
-		require_once('./check_login.php');
 	if (isset($_POST['username']) &&
 		isset($_POST['password']) &&
 		isset($_POST['nickname']) &&
@@ -12,9 +11,9 @@
 			$password = $_POST['password'];
 			$password = password_hash($password, PASSWORD_DEFAULT);
 			$nickname = $_POST['nickname'];
-			$sql = "INSERT INTO `joan8975_users`(`username`, `password`, `nickname`) VALUES('$username','$password','$nickname')";
-			$result = $conn->query($sql);
-
+			$stmt = $conn->prepare("INSERT INTO `joan8975_users`(`username`, `password`, `nickname`) VALUES(?,?,?)");
+			$stmt->bind_param("sss", $username, $password, $nickname);
+			$result = $stmt->execute();
 			if($result) {
 				setSessionId($conn, $username);
 				print_message('註冊成功！', './index.php');

@@ -1,7 +1,7 @@
 <?php
 	require_once('./conn.php');
+	require_once('./utils.php');
 	require_once('./check_login.php');
-	require_once('./utils.php');	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,6 @@
 			$page = intval($_GET['page']);
 		}
 
-
 		function isActive($num, $page) {
 			if($page === $num) return 'active';
 		}
@@ -81,10 +80,11 @@
 		<div class="comment_group">
 			<?php		
 				if(isset($_GET['id'])){
-					$_GET['id'] = $_GET['id'];
+					$ID = $_GET['id'];
 				}else{
-					$_GET['id'] = null;
+					$ID = null;
 				}
+
 				$sql = "SELECT m.content, m.created_at, m.username, m.id, u.nickname
 				FROM `joan8975_comments` as m
 				LEFT JOIN `joan8975_users` as u 
@@ -96,8 +96,8 @@
 
 				if ($result) {
 					while($row = $result->fetch_assoc()) {
-						if ($row['id'] === $_GET['id']){
-							//自己編輯模式
+						if ($row['id'] === $ID){
+							//自己的 comments 編輯模式
 							?>
 							<div class="comment">
 								<form  method="POST" action="./handle_update.php?page=<?= $page ?>&id=<?= $row['id'] ?>#<?= $row['id'] ?>">
