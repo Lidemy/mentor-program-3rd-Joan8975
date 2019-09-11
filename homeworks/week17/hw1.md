@@ -1,4 +1,4 @@
-```javascript=
+```js
 console.log(1)  //1.
 setTimeout(() => { //2.
   console.log(2)

@@ -1,4 +1,4 @@
-```javascript=
+```js
 const obj = {
   value: 1,
   hello: function() {

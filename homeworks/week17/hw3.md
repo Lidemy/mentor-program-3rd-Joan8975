@@ -1,4 +1,4 @@
-```javascript=
+```js
 var a = 1
 function fn(){
   console.log(a) //1. a = undefined
