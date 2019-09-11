@@ -1,0 +1,188 @@
+//color
+$background-light: #eae9e8
+$background-dark: #d3cac4
+$background-gray: #f5f5f5
+$white: #fff
+$font-light: #7a6d65
+$font-dark: #302015
+//font-size
+$font-size: ("s": 14px, "m": 16px, "l": 20px)
+//btn
+$btn-primary-color: #3897f0
+$btn-warning-color: #db5553
+//template
+@mixin template($color: false, $bgc: false, $font-size: false, $radius: false )
+	@if $color != false
+		color: $color
+	@if $bgc != false
+		background-color:  $bgc
+	@if $font-size != false
+		font-size: $font-size
+	@if $radius != false
+		border-radius: $radius
+//btn hover effect
+@mixin btn-hover($color: false, $bgc: false, $border: false)
+	&:hover
+		@if $color != false
+			color: darken($color,15%)
+		@if $bgc != false
+			background-color: darken($bgc,10%)
+		@if $border != false
+			border: 1px solid darken($border,15%)
+		cursor: pointer
+		transition: all  0.9s ease 0s
+
+*
+	font-family: 'Lato', sans-serif
+	box-sizing: border-box
+	text-decoration: none
+	word-wrap: break-word
+
+.clearfix
+	clear: both
+
+html
+	background-color: $background-dark
+
+.navigation
+	z-index: 1 
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	margin: auto
+	@include template($color: $font-light, $bgc: $white, $font-size: map-get($font-size, "m"), $radius: false )
+	text-align: right
+	border-bottom: 1px solid $background-light
+
+	p
+		display: inline-block
+	a
+		display: inline-block
+		color: $font-light
+		line-height: 60px
+		margin: 0px 20px
+		@include btn-hover($color: $font-light, $bgc: false, $border: false)
+
+.bar
+	@include template($color: $font-light, $bgc: $background-light, $font-size: map-get($font-size, "s" ), $radius: false )
+	text-align: center
+	line-height: 24px
+
+.container
+	@include template($color: $font-dark, $bgc: $white, $font-size: false, $radius: 10px)
+	margin: 100px auto
+	width: 500px
+	height: auto
+
+.title
+	padding: 20px
+	border-bottom: 1px solid $background-light
+	font-weight: 700
+	font-size: map-get($font-size, "l")
+
+.comment
+	padding: 40px 20px
+	background-color: $background-light
+	border-bottom: 10px solid $white
+	position: relative
+	&:last-child
+		border:
+			radius: 0px 0px 10px 10px
+			bottom: 0px
+
+.mes_form
+	padding: 20px
+
+.preview_img
+	float: left
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	margin-right: 20px
+
+.time
+	@include template($color: $font-light, $bgc: false, $font-size: map-get($font-size, "s" ), $radius: false )
+
+.nickname_display
+	margin: 5px 10px
+
+.text, form
+	margin: 20px 0px
+
+textarea
+	@include template($color: $font-dark, $bgc: false, $font-size: map-get($font-size, "s" ), $radius: 5px )
+	border: 1px solid $background-light
+	padding: 
+		top: 10px
+		left: 10px
+	display: inline-block
+	&:focus 
+		outline: none
+
+.mes_send
+	@include template($color: $white, $bgc: $btn-primary-color, $font-size: map-get($font-size, "s" ), $radius: 5px )
+	float: right
+	margin-top: 20px
+	padding: 10px 20px
+	font-weight: 700
+	border: none
+	@include btn-hover($color: false, $bgc: $btn-primary-color, $border: false)
+
+%toolbelt
+	@include template($color: false, $bgc: transparent, $font-size: map-get($font-size, "s" ), $radius: 5px )
+	display: inline-block
+	margin-right: 3px
+	padding: 8px 14px
+	outline: none
+		
+
+.edit
+	@extend %toolbelt
+	color: $btn-primary-color
+	border: 1px solid $btn-primary-color
+	@include btn-hover($color: $btn-primary-color, $bgc: false, $border: $btn-primary-color)
+
+.delete
+	@extend %toolbelt
+	color: $btn-warning-color
+	border: none
+	@include btn-hover($color: $btn-warning-color, $bgc: false, $border: false)
+
+/* pagination */
+%highlight
+	@include template($color: #999999, $bgc: $background-gray, $font-size: false, $radius: false )
+	cursor: default
+
+.pagination 
+	text-align: center
+	font-size: 0px
+	padding: 20px
+	border-top: 1px solid $background-light
+	.active
+		@extend %highlight
+	li 
+		display: inline-block	
+		font-size: map-get($font-size, "s" )
+		padding: 8px 6px
+		border: 1px solid #ddd
+		&:hover
+			@extend %highlight
+		& + li
+			border-left-width: 0
+	a
+		color: $btn-primary-color
+		padding: 10px 14px
+			
+/* sub_comment */
+.sub_comments
+	width: 388px
+	margin-left: auto
+
+.sub_comment
+	@include template($color: false, $bgc: #f5f5f5, $font-size: false, $radius: 5px )
+	padding: 20px
+
+.sub_title
+	margin: 30px 0px 6px 0px
+	@include template($color: $font-light, $bgc: false, $font-size: map-get($font-size, "s" ), $radius: false )

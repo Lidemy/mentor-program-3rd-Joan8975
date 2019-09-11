@@ -1,0 +1,2 @@
+/* eslint-disable */
+"use strict";function Stack(){var u=[];this.push=function(e){u.splice(u.length,0,e)},this.pop=function(){var e=u[u.length-1];return u.splice(u.length-1,1),e}}function Queue(){var u=[];this.push=function(e){u.splice(u.length,0,e)},this.pop=function(){var e=u[0];return u.splice(0,1),e}}var stack=new Stack;stack.push(10),stack.push(5),console.log(stack.pop()),console.log(stack.pop());var queue=new Queue;queue.push(1),queue.push(2),console.log(queue.pop()),console.log(queue.pop());
