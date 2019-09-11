@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>留言板版</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<nav class="navigation">
+		<div class="bar">本站為練習用網站，因教學用途刻意忽略資安的實作，註冊時請勿使用任何真實的帳號或密碼</div>
+		<p>Hello, Joan</p>
+		<a href="javascript:;">登出</a>
+	</nav>
+	<div class="container">
+		<div class="title">
+			<p>Comments</p>
+		</div>
+		<form class='mes_form' action='javascript:;'>
+			<img src="./user.png" class="preview_img">
+			<textarea placeholder="留言⋯⋯" style="resize:none; width:390px; height:150px"></textarea>
+			<a href="javascript:;" class="mes_send">發佈</a>
+			<div class='clearfix'></div>
+		</form>
+		<!-- 分頁 -->
+		<div class='pagination'>
+			<ul>
+				<li class='active'>
+					<a href='javascript:;'>1</a>
+				</li>
+				<li>
+					<a href='javascript:;'>2</a>
+				</li>
+				<li>
+					<a href='javascript:;'>3</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 留言列表 -->
+		<div class="comment_group">
+			<div class='comment'>
+				<img src='./user.png' class='preview_img'>
+				<p class='nickname_display'>Joan</p>
+				<p class='time'>2019-08-02 22:00:19</p>
+				<p class='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi praesentium assumenda voluptatum. Cupiditate non repellendus sunt aliquid similique ipsum.</p>
+				<div class='clearfix'></div>
+				<form class='editor' action='javascript:;'>
+					<input type="submit" class='edit' value='編輯'></input>
+					<input type="submit" class='delete' value='刪除'></input>
+				</form>
+				<div class="sub_comments">
+					<div class="sub_comment">
+						<img src='./user.png' class='preview_img'>
+						<p class='nickname_display'>Joan</p>
+						<p class='time'>2019-08-02 22:00:19</p>
+						<p class='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum obcaecati tempora quas amet.</p>
+						<div class='clearfix'></div>
+						<form action='javascript:;'>
+							<input type="submit" class='edit' value='編輯'></input>
+							<input type="submit" class='delete' value='刪除'></input>
+						</form>
+					</div>
+					<form class="add_sub_comment" action='javascript:;'>
+						<p class="sub_title">新增留言</p>
+						<textarea  placeholder="留言⋯⋯" style="resize:none; width:390px; height:100px"></textarea>
+						<a href="javascript:;" class="mes_send">發佈</a>
+						<div class="clearfix"></div>
+					</form>
+				</div>
+			</div>
+			<div class='comment'>
+				<img src='./user.png' class='preview_img'>
+				<p class='nickname_display'>Joan</p>
+				<p class='time'>2019-08-02 22:00:19</p>
+				<p class='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi praesentium assumenda voluptatum. Cupiditate non repellendus sunt aliquid similique ipsum.</p>
+				<div class='clearfix'></div>
+				<form class='editor' action='javascript:;'>
+					<input type="submit" class='edit' value='編輯'></input>
+					<input type="submit" class='delete' value='刪除'></input>
+				</form>
+				<div class="sub_comments">
+					<div class="sub_comment">
+						<img src='./user.png' class='preview_img'>
+						<p class='nickname_display'>Joan</p>
+						<p class='time'>2019-08-02 22:00:19</p>
+						<p class='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum obcaecati tempora quas amet.</p>
+						<div class='clearfix'></div>
+						<form action='javascript:;'>
+							<input type="submit" class='edit' value='編輯'></input>
+							<input type="submit" class='delete' value='刪除'></input>
+						</form>
+					</div>
+					<form class="add_sub_comment" action='javascript:;'>
+						<p class="sub_title">新增留言</p>
+						<textarea  placeholder="留言⋯⋯" style="resize:none; width:390px; height:100px"></textarea>
+						<a href="javascript:;" class="mes_send">發佈</a>
+						<div class="clearfix"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

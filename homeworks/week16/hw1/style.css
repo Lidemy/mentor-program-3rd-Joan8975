@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+.clearfix {
+  clear: both;
+}
+
+html {
+  background-color: #d3cac4;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #7a6d65;
+  background-color: #fff;
+  font-size: 16px;
+  text-align: right;
+  border-bottom: 1px solid #eae9e8;
+  z-index: 1;
+}
+.navigation p {
+  display: inline-block;
+}
+.navigation a {
+  display: inline-block;
+  color: #7a6d65;
+  line-height: 60px;
+  margin: 0px 20px;
+}
+.navigation a:hover {
+  color: #504842;
+  cursor: pointer;
+  transition: all 0.9s ease 0s;
+}
+
+.bar {
+  color: #7a6d65;
+  background-color: #eae9e8;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.container {
+  color: #302015;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 100px auto;
+  width: 500px;
+  height: auto;
+}
+
+.title {
+  padding: 20px;
+  border-bottom: 1px solid #eae9e8;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.comment {
+  padding: 40px 20px;
+  background-color: #eae9e8;
+  border-bottom: 10px solid #fff;
+  position: relative;
+}
+.comment:last-child {
+  border-radius: 0px 0px 10px 10px;
+  border-bottom: 0px;
+}
+
+.mes_form {
+  padding: 20px;
+}
+
+.preview_img {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.time {
+  color: #7a6d65;
+  font-size: 14px;
+}
+
+.nickname_display {
+  margin: 5px 10px;
+}
+
+.text, form {
+  margin: 20px 0px;
+}
+
+textarea {
+  color: #302015;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #eae9e8;
+  padding-top: 10px;
+  padding-left: 10px;
+  display: inline-block;
+}
+textarea:focus {
+  outline: none;
+}
+
+.mes_send {
+  color: #fff;
+  background-color: #3897f0;
+  font-size: 14px;
+  border-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: 700;
+  border: none;
+}
+.mes_send:hover {
+  background-color: #117ee4;
+  cursor: pointer;
+  transition: all 0.9s ease 0s;
+}
+
+.delete, .edit {
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+  padding: 8px 14px;
+  outline: none;
+}
+
+.edit {
+  color: #3897f0;
+  border: 1px solid #3897f0;
+}
+.edit:hover {
+  color: #0f71cc;
+  border: 1px solid #0f71cc;
+  cursor: pointer;
+  transition: all 0.9s ease 0s;
+}
+
+.delete {
+  color: #db5553;
+  border: none;
+}
+.delete:hover {
+  color: #ba2927;
+  cursor: pointer;
+  transition: all 0.9s ease 0s;
+}
+
+/* pagination */
+.pagination li:hover, .pagination .active {
+  color: #999999;
+  background-color: #f5f5f5;
+  cursor: default;
+}
+
+.pagination {
+  text-align: center;
+  font-size: 0px;
+  padding: 20px;
+  border-top: 1px solid #eae9e8;
+}
+.pagination li {
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 6px;
+  border: 1px solid #ddd;
+}
+.pagination li + li {
+  border-left-width: 0;
+}
+.pagination a {
+  color: #3897f0;
+  padding: 10px 14px;
+}
+
+/* sub_comment */
+.sub_comments {
+  width: 388px;
+  margin-left: auto;
+}
+
+.sub_comment {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.sub_title {
+  margin: 30px 0px 6px 0px;
+  color: #7a6d65;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=style.css.map */
