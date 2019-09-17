@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>ic_check_default</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_check_default">
+            <circle id="Oval" fill="#CDCDBE" cx="15" cy="15" r="13"></circle>
+            <path d="M8.49690845,13.5822824 C7.87790459,13.0317139 6.92977883,13.0871916 6.37921027,13.7061955 C5.82864172,14.3251994 5.8841195,15.2733251 6.50312335,15.8238937 L12.3528926,21.026929 C12.9936778,21.5968709 13.9810148,21.5145352 14.518549,20.8463313 L22.8896749,10.4402606 C23.4089374,9.79477009 23.3066094,8.85055125 22.6611189,8.33128876 C22.0156284,7.81202627 21.0714096,7.91435429 20.5521471,8.55984477 L13.1689658,17.7378105 L8.49690845,13.5822824 Z" id="Path" fill="#F2F3EA" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
