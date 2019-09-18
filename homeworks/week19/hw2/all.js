@@ -7,25 +7,14 @@ function render() {
     url: 'http://joandes.com/todolist/api/list.php',
     success: (list) => {
       for (let i = 0; i < list.length; i += 1) {
-        if (list[i].done === '0') {
-          $('.todo_group').append(
-            `<li>
-               <div class="todo_item todo_default" data_id="${list[i].id}">
-                 <div class="icon icon_check"></div>
-                 <p class="txt"> ${list[i].content}</p>
-               </div>
-            </li>`,
-          );
-        } else {
-          $('.todo_group').append(
-            `<li>
-               <div class="todo_item todo_default" data_id="${list[i].id}">
-                 <div class="icon icon_checked"></div>
-                 <p class="txt"> ${list[i].content}</p>
-               </div>
-             </li`,
-          );
-        }
+        $('.todo_group').append(
+          `<li>
+             <div class="todo_item todo_default" data_id="${list[i].id}">
+               <div class="icon ${list[i].done === '0' ? 'icon_check' : 'icon_checked'}"></div>
+               <p class="txt"> ${list[i].content}</p>
+             </div>
+          </li>`,
+        );
       }
       $('.todo_item').hover((e) => {
         const element = $(e.target);
