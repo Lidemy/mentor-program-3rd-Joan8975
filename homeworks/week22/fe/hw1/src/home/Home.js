@@ -18,16 +18,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('https://qootest.com/posts/?_sort=id&_order=desc')
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            posts: result,
-          });
-        },
-      );
-    // unsplash api
     fetch('https://api.unsplash.com/photos/?client_id=773741e75ba8c52b7d3d825cd4c33cf637a1f77a7fe0f64109e4f5bdd35e22ad&per_page=30&order_by=popular')
       .then(res => res.json())
       .then(
@@ -35,6 +25,15 @@ class Home extends Component {
           this.setState({
             imgs: result,
           });
+          fetch('https://qootest.com/posts/?_sort=id&_order=desc')
+            .then(res => res.json())
+            .then(
+              (json) => {
+                this.setState({
+                  posts: json,
+                });
+              },
+            );
         },
       );
   }

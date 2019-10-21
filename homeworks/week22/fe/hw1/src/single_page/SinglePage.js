@@ -12,7 +12,7 @@ class SinglePage extends Component {
     super(props);
     this.state = {
       post: [],
-      imgs: 'https://is.gd/YvDcYD',
+      imgs: [],
     };
   }
 
@@ -24,31 +24,29 @@ class SinglePage extends Component {
         },
       },
     } = this.props;
-
-    fetch(`https://qootest.com/posts/${postId}`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            post: result,
-          });
-        },
-      );
+    const {
+      location: {
+        hash,
+      },
+    } = this.props;
+    const id = hash.slice(1);
 
     fetch('https://api.unsplash.com/photos/?client_id=773741e75ba8c52b7d3d825cd4c33cf637a1f77a7fe0f64109e4f5bdd35e22ad&per_page=30&order_by=popular')
       .then(res => res.json())
       .then(
         (result) => {
-          const {
-            location: {
-              hash,
-            },
-          } = this.props;
-          const id = hash.slice(1);
-
           this.setState({
             imgs: result[id].urls.regular,
           });
+          fetch(`https://qootest.com/posts/${postId}`)
+            .then(res => res.json())
+            .then(
+              (json) => {
+                this.setState({
+                  post: json,
+                });
+              },
+            );
         },
       );
   }
