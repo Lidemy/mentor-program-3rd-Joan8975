@@ -1,0 +1,99 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable object-curly-newline */
+/* jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/prop-types */
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
+
+import React, { Component, Fragment } from 'react';
+import './Home.css';
+import Loading from '../loading/Loading';
+import { getPosts, getImgs } from '../../WebAPI';
+
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      hasMore: false,
+      page: 1,
+    };
+  }
+
+  componentDidMount() {
+    const { page } = this.state;
+    getPosts()
+      .then(res => res.json())
+      .then(
+        (result) => {
+          const totalPage = Math.ceil(result.length / 10);
+          this.setState({
+            totalPage,
+            hasMore: page === totalPage === false,
+            posts: result,
+          });
+        },
+      );
+
+    getImgs(page)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          const { updateImgs } = this.props;
+          updateImgs(result);
+        },
+      );
+  }
+
+  handleLoad() {
+    const { page, totalPage } = this.state;
+    // load page2,3,4...資料
+    getImgs(page + 1)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          const { imgs } = this.props;
+          Array.prototype.push.apply(imgs, result);
+          this.setState(prevState => ({
+            page: prevState.page + 1,
+            hasMore: prevState.page + 1 === totalPage === false,
+          }));
+        },
+      );
+  }
+
+  render() {
+    const { posts, page, hasMore } = this.state;
+    const { history, imgs } = this.props;
+    return (
+      <div className="container">
+        <h3>Blog Posts</h3>
+        <ul>
+          {(posts.length && imgs.length)
+            ? posts.map((post, index) => {
+              if ((index < page * 9) && imgs[index]) {
+                const singlePage = Math.floor(index / 9) + 1;
+                const singleIndex = index - (9 * (singlePage - 1));
+                return (
+                  <Fragment key={post.id}>
+                    <li role="presentation" onClick={() => history.push(`/posts/${post.id}#${singlePage}#${singleIndex}`)}>
+                      <div className="preview">
+                        <img src={imgs[index].urls.regular} alt="" />
+                      </div>
+                      <div className="title">{post.title}</div>
+                      <div className="content">{post.body}</div>
+                    </li>
+                  </Fragment>
+                );
+              }
+            })
+            : <Loading />}
+          {hasMore ? <button type="submit" className="common_button mid_button" onClick={() => { this.handleLoad(); }}>Load More</button> : <div className="clearfix" />}
+          <div className="clearfix" />
+        </ul>
+      </div>
+    );
+  }
+}
+export default Home;
