@@ -18,7 +18,7 @@ class SinglePage extends Component {
   constructor(props) {
     super(props);
     const { editing, fieldInvalid, fieldAuthor, fieldBody, fieldTitle, updateImgs } = this.props;
-    this.state = { editing };
+    this.state = { editing }; // 根據不同 url path 傳來的 editinng 判斷進入單一文章頁/ 編輯模式
     fieldInvalid([]);
     fieldAuthor('');
     fieldBody('');
@@ -44,7 +44,7 @@ class SinglePage extends Component {
           fieldTitle(result.title);
         },
       );
-    // 判斷要拿第幾頁的第幾筆 img 資料
+    // 透過 hash 拿到第幾頁第幾筆圖片資料，放到 imgs array 裡
     const {
       location: {
         hash,
@@ -91,6 +91,7 @@ class SinglePage extends Component {
       author,
       body,
     };
+    // author, body, title 皆不為空就更新 post
     if (title && author && body !== '') {
       updatePost(postId, {
         method: 'PUT',
@@ -106,7 +107,7 @@ class SinglePage extends Component {
         .catch((error) => {
           console.log(error);
         });
-    } else {
+    } else { // 把 author, body, title 為空的放到 fieldInvalid
       const invalid = [];
       Object.entries(updateState).forEach(([key, value]) => {
         if (value === '') {
@@ -136,6 +137,7 @@ class SinglePage extends Component {
     const res = hash.replace(/#/g, ',').split(',');
     const page = res[1];
     const index = res[2];
+    // editing 為 false 進入單一文章頁
     if (!editing) {
       if (imgs.length) {
         return (
@@ -155,7 +157,8 @@ class SinglePage extends Component {
             </div>
           </Fragment>
         );
-      } return <Loading />;
+      } return <Loading />; // 還沒拿到圖片先顯示 loading
+    // editing 為 true 進入編輯模式
     } return <EditPost page={page} index={index} handleUpdate={(e) => { this.handleUpdate(e); }} />;
   }
 }

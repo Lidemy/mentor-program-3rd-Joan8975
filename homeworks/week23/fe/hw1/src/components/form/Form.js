@@ -58,10 +58,11 @@ class Form extends Component {
     }
   }
 
-  checkValid(input, errTxt) {
+  // 根據 invalidInput 決定內容位空的選項要出現什麼 警語和樣式
+  checkValid(input, txt) {
     const { invalidInput } = this.props;
     return (
-      invalidInput.some(item => item === input) ? errTxt : '');
+      invalidInput.some(item => item === input) ? txt : '');
   }
 
   render() {

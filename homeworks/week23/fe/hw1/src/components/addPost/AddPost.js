@@ -27,6 +27,7 @@ class AddPost extends Component {
       body,
     };
     e.preventDefault();
+    // author, body, title 皆不為空就新增 post
     if (title && author && body !== '') {
       createPost({
         method: 'POST',
@@ -42,7 +43,7 @@ class AddPost extends Component {
         .catch((error) => {
           console.log(error);
         });
-    } else {
+    } else { // 把 author, body, title 為空的放到 fieldInvalid
       const invalid = [];
       Object.entries(newState).forEach(([key, value]) => {
         if (value === '') {
