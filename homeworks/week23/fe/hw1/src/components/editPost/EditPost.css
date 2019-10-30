@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
+
+*:focus{
+	outline: none;
+}
+::placeholder {
+	color:#cecece;
+}
+.post_container{
+	margin: auto;
+	width: 600px;
+}
+
