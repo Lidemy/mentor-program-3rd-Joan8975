@@ -9,7 +9,7 @@ function homeReducer(globalState = state, action) {
     case actionTypes.UPDATE_IMGS:
       return {
         ...globalState,
-        imgs: action.value,
+        imgs: globalState.imgs.concat(action.value),
       };
     default:
       return globalState;

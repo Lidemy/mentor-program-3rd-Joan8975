@@ -21,7 +21,7 @@ const App = () => (
       <div>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/posts/:postId" render={() => <SinglePage editing={false} />} />
+        <Route path="/posts/:postId" render={() => <SinglePage />} />
         <Route path="/addPost" component={AddPost} />
         <Route path="/edit/:postId" render={() => <SinglePage editing />} />
       </div>

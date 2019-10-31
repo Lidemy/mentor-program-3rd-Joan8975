@@ -30,7 +30,7 @@ class Home extends Component {
           const totalPage = Math.ceil(result.length / 10);
           this.setState({
             totalPage,
-            hasMore: page === totalPage === false,
+            hasMore: !(page === totalPage),
             posts: result,
           });
         },
@@ -53,11 +53,11 @@ class Home extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          const { imgs } = this.props;
-          Array.prototype.push.apply(imgs, result);
+          const { updateImgs } = this.props;
+          updateImgs(result);
           this.setState(prevState => ({
             page: prevState.page + 1,
-            hasMore: prevState.page + 1 === totalPage === false,
+            hasMore: !(prevState.page + 1 === totalPage),
           }));
         },
       );
