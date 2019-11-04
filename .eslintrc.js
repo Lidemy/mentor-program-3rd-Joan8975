@@ -10,6 +10,7 @@ module.exports = {
       Atomics: 'readonly',
       SharedArrayBuffer: 'readonly',
     },
+    parser: "babel-eslint",
     parserOptions: {
       ecmaFeatures: {
         jsx: true,
@@ -21,6 +22,18 @@ module.exports = {
     ],
     rules: {
       "no-console": "off",
-      "no-alert": "off"
+      "no-alert": "off",
+      "import/no-unresolved": "off",
+      "react/jsx-filename-extension": "off",
+      "object-curly-newline": "off",
+      "react/prop-types": "off",
+      "react/jsx-wrap-multilines": "off",
+      "react/jsx-closing-bracket-location": "off",
+      "react/jsx-closing-tag-location": "off",
+      "arrow-parens":"off",
+      "array-callback-return":"off",
+      "consistent-return": "off",
+      "arrow-body-style": "off",
+
     },
   };
