@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
+/* *{
+	outline: 1px solid pink;
+} */
+*:focus{
+	outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color:#cecece;
+	font-weight: normal;
+  }
+.post_container{
+	margin: auto;
+	width: 600px;
+}
+.input_title{
+	font-weight: normal;
+	font-size: 14px;
+	color: #a0a0a0;
+	height: 16px;
+	margin: 20px 0 6px 0;
+}
+.err_txt{
+	height: 16px;
+	font-weight: normal;
+	font-size: 14px;
+	color: #d6bb8b;
+}
+/* form{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+} */
+input{
+	font-size:16px;
+	font-weight: normal;
+	width: 600px;
+	height: 50px;
+	border: solid 2px #f0f0f0;
+	background-color: #ffffff;
+	padding: 0px 10px;
+	color: #4a4a4a;
+}
+
+textarea{
+	font-size:16px;
+	font-weight: normal;
+	padding: 10px;
+	resize:none;
+	width: 600px;
+	height: 220px;
+	border: solid 2px #f0f0f0;
+	color: #4a4a4a;
+	margin: 0;
+}
+
+input:focus ,textarea:focus{
+	border: solid 2px #48e3ee;
+}
+.input_empt{
+	border: solid 2px #d6bb8b;
+}
+
+
